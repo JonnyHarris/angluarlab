@@ -2,19 +2,19 @@
     <h2>View 1:</h2>
 	Name:
     <br />
-    <input type="text" data-ng-model="filter.name">
+    <input type="text" data-ng-model="filter.name" />
     <br />
     <ul>
-        <li ng-repeat="cust in customers |  filter:filter.name | orderBy:'filter.city'">
-        </li>
-   </ul>
-   <br />
-   Customer Name:
+        <li data-ng-repeat="cust in customers |  filter:filter.name | orderBy:'city'">
+        {{ cust.name }} - {{ cust.city }}</li>    
+		
+	</ul>
     <br />
-    <input type="text" data-ng-model="newCustomer.name">
-   Customer City:
+    Customer Name: <br />
+    <input type="text" data-ng-model="newCustomer.name" />
     <br />
-    <input type="text" data-ng-model="newCustomer.city">
+	Customer City: <br />
+    <input type="text" data-ng-model="newCustomer.city"/>
     <br />
     <button data-ng-click="addCustomer()">Add Customer</button>
     <br />
