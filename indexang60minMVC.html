@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html data-ng-app>
+	<head>
+		<title>Angular Fund.MVC</title>
+	</head>
+<!--  -->
+
+	<body >
+		<h1>Angular Movel View Controller and Scope (View Model)</h1>
+		<div data-ng-controller="SimpleController">
+			Name: 
+			<br />
+			<input type="text" data-ng-model="name" /> {{ name }}
+			<br />
+			<ul>
+				<li data-ng-repeat="cust in customers | filter:name | orderBy:'city'"> {{ cust.name  }} - {{ cust.city }}</li>
+			</ul>
+			</div>
+	    <script src="js/vendor/angular.js"></script>
+	<!-- Scoped controller which is injected $scope object literals -->   
+		<script>
+			function SimpleController($scope) {
+				$scope.customers=[
+					{name:'TEd',city:'Wexxford'},
+					{name:'Tim',city:'Dubblin'},
+					{name:'Zed',city:'Belllfast'},
+					{name:'Shiva',city:'Galwway'}
+				];
+			}
+		</script>
+	<!-- -->
+	</body>
+</html>

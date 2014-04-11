@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html data-ng-app>
+	<head>
+		<title>Angular Fund.60 Mins</title>
+	</head>
+	<body data-ng-init="customers=[{name:'TEd',city:'Wexford'},{name:'Tim',city:'Dublin'},{name:'Miky',city:'Belfast'},{name:'Shiva',city:'Galway'}]">
+		<h1>Angular Fundamentals in 60-ish minutes</h1>
+		Name: 
+		<br />
+		<input type="text" data-ng-model="name" /> {{ name }}
+		<br />
+		<ul>
+			<li data-ng-repeat="cust in customers | filter:name | orderBy:'city'"> {{ cust.name  }} - {{ cust.city }}</li>
+<!--  Alternative version format
+			<li data-ng-repeat="cust in customers | filter:cust.name"> {{ cust.name + ' - ' + cust.city }}</li>
+	-->
+		</ul>
+	    <script src="js/vendor/angular.js"></script>
+	<!--    
+		<script>
+			function SimpleController($scope) {
+				$scope.customers=[
+					{name:'TEd',city:'Wexxford'},
+					{name:'Tim',city:'Dubblin'},
+					{name:'Zed',city:'Belllfast'}
+				];
+			}
+		</script>
+	-->
+	</body>
+</html>

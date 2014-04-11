@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-ng-app="demoAppModuleName">
+	<head>
+		<title>Angular Fund.Routes</title>
+	</head>
+
+	<body >
+		<h1>Angular Routes </h1>
+		<h2>Movel View Controller and Scope (View Model)</h2>
+		<h2>Module defined Controller with var Object definition</h2>
+		<link rel="stylesheet" type="text/css" href="css/angular.css"/>
+		
+		<div data-ng-controller="SimpleController">
+			<br />
+			Name: 
+			<input type="text" data-ng-model="name" /> {{ name }}
+			<br />
+			<br />
+			<ul>
+				<li data-ng-repeat="cust in customers | filter:name | orderBy:'city'"> {{ cust.name  }} - {{ cust.city }}</li>
+			</ul>
+			</div>
+	    <script src="js/vendor/angular.js"></script>
+	<!-- Controller is called with variable object name 'controllers' -->   
+		<script>
+			var demoApp2 = angular.module('demoAppModuleName',[]);
+			
+			var controllers ={};
+			controllers.SimpleController = 
+			function ($scope) {
+				$scope.customers=[
+					{name:'TEd',city:'Wexxford'},
+					{name:'Tim',city:'Dubblin'},
+					{name:'Zed',city:'Belllfast'},
+					{name:'Shiva',city:'Galwway'}
+				];
+			};
+			
+			demoApp2.controller(controllers);
+			
+
+		</script>
+	</body>
+</html>

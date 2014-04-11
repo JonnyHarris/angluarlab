@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html ng-app>
+	<head>
+		<title>Angular2 App Example</title>
+		<link href="css/animations.css" rel="stylesheet" />
+	</head>
+	<body ng-init="customers=[{name:'TEd',city:'Wexford'},{name:'Tim',city:'Dublin'},{name:'Zed',city:'Belfast'}]">
+		<h1>Angulars in 20-ish minutes</h1>
+		
+		<div>
+		Search: <input type="text" data-ng-model="SearchText" />
+			{{ SearchText }}
+			<br />
+			<h3>Customers:</h3>
+			<table>
+				<tr ng-repeat="cust in customers | filter:SearchText">
+					<td>{{ cust.name }} - {{ cust.city }}</td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	    <script src="js/vendor/angular.js"></script>
+        <script src="js/vendor/angular-route.js"></script>
+        <script src="js/vendor/angular-animation.js"></script>
+	    <script>
+		
+		</script>
+
+	</body>
+</html>
